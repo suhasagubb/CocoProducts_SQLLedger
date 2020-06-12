@@ -1,0 +1,241 @@
+<%include preamble.tex%>
+
+\begin{document}
+
+\pagestyle{myheadings}
+\thispagestyle{empty}
+
+\fontfamily{cmss}\fontsize{11pt}{13pt}\selectfont
+
+<%include letterhead.tex%>
+
+<%pagebreak 65 27 37%>
+\end{tabularx}
+
+  \rule{\textwidth}{2pt}
+  
+
+
+  \hfill
+  \begin{tabularx}{\textwidth}{Xr@{\hspace{1cm}}r@{}}
+  & Subtotal & <%sumcarriedforward%> \\
+  \end{tabularx}
+
+\newpage
+
+\markboth{<%company%>\hfill <%invnumber%>}{<%company%>\hfill <%invnumber%>}
+
+\begin{tabularx}{\textwidth}{@{}rlXlrlrrr@{}}
+  \textbf{Pos} & \textbf{Number} & \textbf{Description} & & \textbf{Qt'y} &
+    \textbf{Unit} & \textbf{Price} & \textbf{Disc \%} & \textbf{Amount} \\ [0.5em]
+  & carried forward from page <%lastpage%> & & & & & & & <%sumcarriedforward%> \\ [0.5em]
+<%end pagebreak%>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\centerline{\textbf{TAX INVOICE}}
+
+\vspace{0.5cm}
+
+\rule[1.5em]{\textwidth}{0.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tabularx}{\textwidth} {|X|X|}
+  \hline
+  \textbf{Invoice No.: } <%invnumber%> & \textbf{Date: } <%invdate%>  \\
+  \hline
+
+\vspace{0.3cm}
+
+\parbox[t]{.5\textwidth}{
+\textbf{To}
+\vspace{0.3cm}
+
+<%name%>
+
+<%address1%>
+
+<%address2%>
+
+<%city%>
+<%if state%>
+\hspace{-0.1cm}, <%state%>
+<%end state%>
+<%zipcode%>
+
+<%country%>
+
+\vspace{0.3cm}
+
+<%if contact%>
+<%contact%>
+\vspace{0.2cm}
+<%end contact%>
+
+<%if customerphone%>
+Tel: <%customerphone%>
+<%end customerphone%>
+
+<%if customerfax%>
+Fax: <%customerfax%>
+<%end customerfax%>
+
+<%email%>
+
+
+<%if customertaxnumber%>
+GSTIN: <%customertaxnumber%>
+<%end customertaxnumber%>
+}
+
+&
+
+\vspace{0.3cm}
+
+\parbox[t]{.5\textwidth}{
+\textbf{Ship To}
+\vspace{0.3cm}
+
+<%shiptoname%>
+
+<%shiptoaddress1%>
+
+<%shiptoaddress2%>
+
+<%shiptocity%>
+<%if shiptostate%>
+\hspace{-0.1cm}, <%shiptostate%>
+<%end shiptostate%>
+<%shiptozipcode%>
+
+<%shiptocountry%>
+
+\vspace{0.3cm}
+
+<%if shiptocontact%>
+<%shiptocontact%>
+\vspace{0.2cm}
+<%end shiptocontact%>
+
+<%if shiptophone%>
+Tel: <%shiptophone%>
+<%end shiptophone%>
+
+<%if shiptofax%>
+Fax: <%shiptofax%>
+<%end shiptofax%>
+
+<%shiptoemail%>
+} 
+\hfill \\
+
+\hline
+
+\textbf{Order Reference: } <%ordnumber%> &  \textbf{Carrier: }  <%shipvia%> \\
+
+\hline
+
+\end{tabularx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tabularx}{\textwidth}{|r|X|r|r|c|r|r|} \hline
+%{@{}rlXlrlllrrr@{}} \hline
+  \textbf{Sl. No.} & \textbf{Particulars} & \textbf{HSN/SAC} & \textbf{Quantity} &
+    \textbf{Unit} & \textbf{Rate} & \textbf{Amount} \\ [0.5em]
+  \hline
+<%foreach number%>
+  <%runningnumber%> & <%description%> & & <%qty%> & 
+  <%unit%> & <%sellprice%> & <%linetotal%> \\
+  \hline
+<%end number%>
+
+%Start Tax Newly introduced for tax
+\multicolumn{6}{|r|}{\textbf{Total}} & <%subtotal%> \\
+<%foreach tax%>
+   \multicolumn{6}{|r|}{<%taxdescription%>} & <%tax%> \\
+<%end tax%>
+\hline
+\multicolumn{6}{|r|}{\textbf{Grand Total}} & {\textbf{<%invtotal%>}} \\
+\hline
+% End Tax
+
+\end{tabularx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{0.3cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Amount in words: <%text_amount%> only.
+
+\vspace{12pt}
+
+<%notes%>
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hfill
+For Coco Products
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vfill
+
+\parbox{\textwidth}{%
+  \parbox[b]{.45\textwidth}{%
+  <%if paid_1%>
+  \begin{tabularx}{0.45\textwidth}{@{}lXr@{}}
+    \textbf{Payments:} & & \\
+    \hline
+    \textbf{Date} & \textbf{Reference} & \textbf{Amount} \\
+  <%end paid_1%>
+  <%foreach payment%>
+    <%paymentdate%> & <%paymentsource%> & <%payment%> \\
+  <%end payment%>
+  <%if paid_1%>
+  \end{tabularx}
+  <%end paid_1%>
+  }
+  \parbox[b]{.12\textwidth}{
+    %\includegraphics[scale=0.3]{../<%templates%>/<%language_code%>/logo}
+  }\hfill
+  \begin{tabularx}{0.43\textwidth}{lll@{}}
+  \multicolumn{3}{l}{Company's Bank Details:} \\
+  Bank Name & : & Syndicate Bank \\
+  A/c No. & : & 55555555555555 \\
+  Branch / IFSC Code & : &  Gubbi / SYNB0000000 \\
+  \end{tabularx}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\centerline{\textbf{Thank You for your valued business!}}
+
+\rule{\textwidth}{0.5pt}
+
+\usebox{\ftr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

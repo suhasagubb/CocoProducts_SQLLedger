@@ -1,0 +1,176 @@
+<%include preamble.tex%>
+
+\begin{document}
+
+\pagestyle{myheadings}
+\thispagestyle{empty}
+
+\fontfamily{cmss}\fontsize{11pt}{13pt}\selectfont
+
+<%include letterhead.tex%>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\centerline{\textbf{PAYMENT VOUCHER}}
+
+\vspace{0.5cm}
+
+\rule[1.5em]{\textwidth}{0.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tabularx}{\textwidth} {|X|X|}
+  \hline
+  \textbf{Voucher No.: } <%invnumber%> & \textbf{Date: } <%invdate%>  \\
+  \hline
+
+\vspace{0.3cm}
+
+\parbox[t]{.5\textwidth}{
+\vspace{0.3cm}
+
+<%name%>
+
+<%address1%>
+
+<%address2%>
+
+<%city%>
+<%if state%>
+\hspace{-0.1cm}, <%state%>
+<%end state%>
+<%zipcode%>
+
+<%country%>
+
+\vspace{0.3cm}
+
+<%if contact%>
+<%contact%>
+\vspace{0.2cm}
+<%end contact%>
+
+<%if customerphone%>
+Tel: <%customerphone%>
+<%end customerphone%>
+
+<%if customerfax%>
+Fax: <%customerfax%>
+<%end customerfax%>
+
+<%email%>
+
+
+<%if customertaxnumber%>
+GSTIN: <%customertaxnumber%>
+<%end customertaxnumber%>
+}
+
+&
+
+\vspace{0.3cm}
+
+\parbox[t]{.5\textwidth}{
+  \vspace{0.3cm}
+ <%description%>
+} 
+\hfill \\
+
+\hline
+
+\textbf{Reference: } <%ordnumber%> &  \\
+
+\hline
+
+\end{tabularx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tabularx}{\textwidth}{|r|X|r|} \hline
+  \textbf{Sl. No.} & \textbf{Particulars} & \textbf{Amount} \\ [0.5em]
+  \hline
+<%foreach amount%>
+   & <%description%> & <%amount%> \\
+  \hline
+<%end amount%>
+
+%Start Tax Newly introduced for tax
+
+\multicolumn{2}{|r|}{\textbf{Total}} & <%subtotal%> \\
+
+<%foreach tax%>
+\ifthenelse{\equal{<%tax%>}{0.00}} {} { \multicolumn{2}{|r|}{<%taxdescription%>} & <%tax%>\\}
+<%end tax%>
+\hline
+\multicolumn{2}{|r|}{\textbf{Grand Total}} & {\textbf{<%invtotal%>}} \\
+\hline
+% End Tax
+
+\end{tabularx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{0.3cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Amount in words: <%text_amount%> only.
+
+\vspace{12pt}
+
+<%notes%>
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hfill
+For Coco Products
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vfill
+
+\parbox{\textwidth}{%
+  \parbox[b]{.45\textwidth}{%
+  <%if paid_1%>
+  \begin{tabularx}{0.45\textwidth}{@{}lXr@{}}
+    \textbf{Payments:} & & \\
+    \hline
+    \textbf{Date} & \textbf{Reference} & \textbf{Amount} \\
+  <%end paid_1%>
+  <%foreach payment%>
+    <%paymentdate%> & <%paymentsource%> & <%payment%> \\
+  <%end payment%>
+  <%if paid_1%>
+  \end{tabularx}
+  <%end paid_1%>
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\centerline{\textbf{Thank You for your valued business!}}
+
+\rule{\textwidth}{0.5pt}
+
+\usebox{\ftr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
