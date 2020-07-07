@@ -1,0 +1,81 @@
+"id","accno","description","charttype","category","link","gifi_accno","contra","closed"
+10001,"1000",CURRENT ASSETS,H,A,"","",false,false
+10004,"1200",Accounts Receivables,A,A,AR,"",false,false
+10006,"1500",INVENTORY ASSETS,H,A,"","",false,false
+10007,"1510",Inventory,A,A,IC,"",false,false
+10009,"1820",Office Furniture & Equipment,A,A,"","",false,false
+10011,"1840",Vehicle,A,A,"","",false,false
+10140,"3040",CGST @ 2.5%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10013,"2000",CURRENT LIABILITIES,H,L,"","",false,false
+10014,"2100",Accounts Payable,A,L,AP,"",false,false
+10015,"2600",LONG TERM LIABILITIES,H,L,"","",false,false
+10141,"3050",SGST @ 6%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10079,"3020",CGST @ 0%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10139,"3030",SGST @ 2.5%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10022,"4000",SALES REVENUE,H,I,"","",false,false
+10023,"4010",Sales,A,I,AR_amount:IC_sale,"",false,false
+10024,"4400",OTHER REVENUE,H,I,"","",false,false
+10025,"4430",Shipping & Handling,A,I,IC_income,"",false,false
+10145,"3080",CGST @ 9%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10144,"3070",SGST @ 9%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10028,"5000",COST OF GOODS SOLD,H,E,"","",false,false
+10029,"5010",Purchases,A,E,AP_amount:IC_cogs:IC_expense,"",false,false
+10030,"5100",Freight,A,E,AP_amount:IC_expense,"",false,false
+10146,"3090",SGST @ 14%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10036,"5620",Bad Debts,A,E,"","",false,false
+10143,"3000",TAXES,H,L,"","",false,false
+10135,"1330",Power Deposit,A,A,AP_amount,"",false,false
+10053,"3010",SGST @ 0%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10142,"3060",CGST @ 6%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10147,"3100",CGST @ 14%,A,L,AR_tax:AP_tax:IC_taxpart:IC_taxservice,"",false,false
+10003,"1065",Cash In Hand,A,A,AR_paid:AP_paid,"",false,false
+10119,"2110",Bank Account - Syndicate Bank OD,A,L,AR_paid:AP_paid,"",false,false
+10050,"2120",Hand Loan - Krishna H S,A,L,"","",false,false
+10156,"2130",Hand Loan - Sudhira H S,A,L,"","",false,false
+10157,"2140",Hand Loan - Suhasa H S,A,L,"","",false,false
+10158,"2150",Hand Loan - Bharata H S,A,L,"","",false,false
+10017,"2630",H S K & Co,A,L,"","",false,false
+10010,"1825",Plant & Machinery,A,A,AP_amount,"",false,false
+10016,"2620",Partners H S K & Co,A,L,"","",false,false
+10068,"5430",Pre-operative Expenses (Coco v2),A,E,AP_amount,"",false,false
+10170,"5480",Front Loader Expenses,A,E,AP_amount,"",false,false
+10171,"5490",Repair & Maintenance,A,E,AP_amount,"",false,false
+10172,"3500",RETAINED EARNINGS,H,Q,"","",false,false
+10173,"3510",Retained Earnings - prior years,A,Q,"","",false,false
+10133,"1310",Building Rent Deposit,A,A,"","",false,false
+10134,"1320",Deposits at Syndicate Bank,A,A,"","",false,false
+10002,"1060",Bank Account - SBI,A,A,AR_paid:AP_paid,"",false,false
+10008,"1800",FIXED ASSETS,H,A,"","",false,false
+10124,"2700",PARTNER'S CAPITAL ACCOUNT,H,L,"","",false,false
+10125,"2710",Capital Account H K Satyanarayana,A,L,"","",false,false
+10126,"2720",Capital Account H K Srinivasa,A,L,"","",false,false
+10130,"2800",PARTNER'S CURRENT ACCOUNT,H,L,"","",false,false
+10131,"2810",Current Account H K Satyanarayana,A,L,"","",false,false
+10132,"2820",Current Account H K Srinivasa,A,L,"","",false,false
+10040,"5615",Stationary & Office Supplies,A,E,AP_amount,"",false,false
+10031,"5400",DIRECT EXPENSES,H,E,"","",false,false
+10032,"5410",Labour Wages & Salaries,A,E,AP_amount,"",false,false
+10044,"5616",Travel & Conveyance,A,E,AP_amount,"",false,false
+10046,"5617",Papers & Periodicals,A,E,AP_amount,"",false,false
+10071,"5460",Power Charges,A,E,AP_amount,"",false,false
+10073,"5510",Transportation & Related Expenses,A,E,AP_amount,"",false,false
+10067,"5420",Labour Wages - Overtime,A,E,AP_amount,"",false,false
+10070,"5450",Labour Food & Refreshments,A,E,AP_amount,"",false,false
+10033,"5600",INDIRECT EXPENSES,H,E,"","",false,false
+10035,"5611",Bank Charges & Commission,A,E,AP_amount,"",false,false
+10048,"5613",Depreciation,A,E,AP_amount,"",false,false
+10034,"5610",Statutory Fees & Expenses,A,E,AP_amount,"",false,false
+10047,"5618",Interest on Capital,A,E,AP_amount,"",false,false
+10039,"5621",Medical Expenses Reimbursed,A,E,AP_amount,"",false,false
+10041,"5622",Rent,A,E,AP_amount,"",false,false
+10042,"5623",Repair & Maintenance,A,E,AP_amount,"",false,false
+10045,"5624",Utilities,A,E,AP_amount,"",false,false
+10037,"5619",Interest on Working Capital,A,E,AP_amount,"",false,false
+10136,"5625",Remuneration to Partners,A,E,AP_amount,"",false,false
+10026,"4440",Building Rent,A,I,AR_amount,"",false,false
+10137,"4450",Interest Earned,A,I,AR_amount,"",false,false
+10074,"5520",Weighment Charges,A,E,AP_amount,"",false,false
+10069,"5440",Bundling Threads,A,E,AP_amount,"",false,false
+10072,"5470",Spares & Consumables,A,E,AP_amount,"",false,false
+10043,"5612",Communication Expenses,A,E,AP_amount,"",false,false
+10038,"5614",Insurance,A,E,AP_amount,"",false,false
